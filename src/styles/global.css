@@ -6,3 +6,14 @@
     --color-ts-blue-medium: #4B6DB0;
     --color-ts-blue-dark: #314B7D;
 }
+
+@layer base {
+    body {
+        font-family: 'Raleway Variable', sans-serif;
+        @apply text-white
+    }
+    h1 {
+        @apply font-bold uppercase
+    }
+}
+

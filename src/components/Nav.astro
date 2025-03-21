@@ -1,9 +1,19 @@
-<div class="bg-ts-blue-medium lg:bg-transparent h-[50px] lg:h-auto">
-    <ul>
-        <li>About</li>
-        <li>Projects</li>
-        <li>Skills</li>
-        <li>Contact</li>
-        <li>Resume</li>
+---
+import Hamburger from "./Hamburger.astro"
+const navItems = ["about", "skills", "projects", "contact", "resume"]
+---
+
+<div class="fixed flex items-center w-full top-0 left-0 bg-ts-blue-medium lg:bg-transparent h-[50px] lg:h-auto border-b-1 border-ts-blue-dark shadow">
+    <Hamburger />
+    <div class="md:hidden">
+        <h1 class="text-xl">Tyson Sukeforth</h1>
+        <h3 class="text-[10px]">Sr Front End Developer &middot; Engineering Manager</h3>
+    </div>
+    <ul class="hidden md:flex flex-row justify-evenly items-center h-full">
+        {navItems.map((item) => (
+            <li class="flex">
+                <a class="inline-block px-8 py-2 uppercase font-semibold text-ts-blue-bright hover:text-white transition-all" href={`#${item}`}>{item}</a>
+            </li>
+        ))}
     </ul>
 </div>

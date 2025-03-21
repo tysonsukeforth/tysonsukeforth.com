@@ -1,19 +1,31 @@
 ---
-import Hamburger from "./Hamburger.astro"
 const navItems = ["about", "skills", "projects", "contact", "resume"]
 ---
 
-<div class="fixed flex items-center w-full top-0 left-0 bg-ts-blue-medium lg:bg-transparent h-[50px] lg:h-auto border-b-1 border-ts-blue-dark shadow">
-    <Hamburger />
+<nav class="fixed flex items-center w-full top-0 left-0 px-2 bg-ts-blue-medium lg:bg-transparent h-[50px] lg:h-auto border-b-1 border-ts-blue-dark shadow z-20">
+    <button id="MobileNav" class="group md:hidden flex flex-col justify-between h-[41px] w-[43px] mr-2 p-2 cursor-pointer">
+        <span class="relative block bg-white w-[27] h-[3px] top-0 rounded transform transition-all duration-300 origin-center group-focus:rotate-45 shadow-sm shadow-ts-blue-dark group-focus:scale-x-120 group-focus:top-[11px]"></span>
+        <span class="relative block bg-white w-[27] h-[3px] rounded transform transition-all duration-300 group-focus:opacity-0 group-focus:scale-50"></span>
+        <span class="relative block bg-white w-[27] h-[3px] top-0 rounded transform transition-all duration-300 origin-center group-focus:-rotate-45 shadow-sm shadow-ts-blue-dark group-focus:scale-x-120 group-focus:-top-[11px]"></span>
+    </button>
     <div class="md:hidden">
-        <h1 class="text-xl">Tyson Sukeforth</h1>
-        <h3 class="text-[10px]">Sr Front End Developer &middot; Engineering Manager</h3>
+        <h1 class="text-xl leading-none">Tyson Sukeforth</h1>
+        <h2 class="text-[10px]">Sr Front End Developer &#x1F7A0; Engineering Manager</h2>
     </div>
-    <ul class="hidden md:flex flex-row justify-evenly items-center h-full">
+    <menu data-nav-open="" class="absolute flex flex-col justify-center transform transition-all duration-300 md:justify-evenly items-center bottom-[50px] max-sm:data-[nav-open='true']:-bottom-[calc(100vh-50px)] left-0 w-full h-[calc(100vh-50px)] bg-ts-blue-medium -z-1 md:relative md:flex-row md:h-full">
         {navItems.map((item) => (
             <li class="flex">
-                <a class="inline-block px-8 py-2 uppercase font-semibold text-ts-blue-bright hover:text-white transition-all" href={`#${item}`}>{item}</a>
+                <a class="inline-block my-3 px-8 py-2 uppercase font-semibold text-ts-blue-bright hover:text-white transition-all md:my-0" href={`#${item}`}>{item}</a>
             </li>
         ))}
-    </ul>
-</div>
+    </menu>
+</nav>
+
+<script>
+    const MobileNav = document.getElementById("MobileNav");
+    const Nav = document.querySelector("nav > menu");
+
+    MobileNav!.addEventListener("click", () => {
+        Nav!.dataset.navOpen = Nav!.dataset.navOpen === "" ? "true" : "";
+    });
+</script>

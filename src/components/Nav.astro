@@ -1,23 +1,29 @@
 ---
+import { Image } from "astro:assets"
+import githubSocial from "../assets/github-mark-white.svg"
+import linkedInSocial from "../assets/In-White-40.png"
 const navItems = ["about", "skills", "projects", "contact", "resume"]
 ---
 
-<nav class="fixed flex items-center w-full top-0 left-0 px-2 bg-ts-blue-medium h-[50px] border-b-1 border-ts-blue-dark shadow z-20 lg:flex-col lg:left-auto lg:right-[calc(50%+128px)] lg:w-96 lg:h-auto lg:items-start lg:bg-amber-200/20 lg:shadow-none xl:w-128">
+<nav class="fixed flex items-center w-full top-0 left-0 px-2 bg-ts-blue-medium h-[50px] border-b-1 border-ts-blue-dark shadow z-20 lg:flex-col lg:top-15 lg:left-auto lg:right-[calc(50%+128px)] lg:w-96 lg:h-auto lg:items-start lg:bg-black/10 lg:shadow-none xl:w-128">
     <button id="MobileNav" class="group sm:hidden flex flex-col justify-between h-[41px] w-[43px] mr-2 p-2 cursor-pointer">
         <span class="relative block bg-white w-[27] h-[3px] top-0 rounded transform transition-all duration-300 origin-center group-focus:rotate-45 shadow-sm shadow-ts-blue-dark group-focus:scale-x-120 group-focus:top-[11px]"></span>
         <span class="relative block bg-white w-[27] h-[3px] rounded transform transition-all duration-300 group-focus:opacity-0 group-focus:scale-50"></span>
         <span class="relative block bg-white w-[27] h-[3px] top-0 rounded transform transition-all duration-300 origin-center group-focus:-rotate-45 shadow-sm shadow-ts-blue-dark group-focus:scale-x-120 group-focus:-top-[11px]"></span>
     </button>
     <div class="sm:hidden lg:block">
-        <h1 class="text-xl leading-none">Tyson Sukeforth</h1>
-        <h2 class="text-[10px]">Sr Front End Developer &#x1F7A0; Engineering Manager</h2>
+        <h1 class="text-xl leading-none lg:text-[34px] xl:text-[40px]">Tyson Sukeforth</h1>
+        <h2 class="text-[10px] md:mb-5 md:font-semibold lg:text-[14.5px] xl:text-[17px]">Sr Front End Developer &#x1F7A0; Engineering Manager</h2>
+        <h3 class="hidden pr-20 lg:block lg:text-sm xl:text-base">Over 17 years of web development experience in leading development teams and projects to success.</h3>
     </div>
-    <menu data-nav-open="" class="absolute flex flex-col justify-center transform transition-all duration-300 md:justify-evenly items-center bottom-[50px] max-sm:data-[nav-open='true']:-bottom-[calc(100vh-50px)] left-0 w-full h-[calc(100vh-50px)] bg-ts-blue-medium -z-1 sm:static sm:flex-row sm:h-full lg:flex-col lg:bg-transparent">
+    <menu data-nav-open="" class="absolute flex flex-col justify-center transform transition-all duration-300 md:justify-evenly items-center bottom-[50px] max-sm:data-[nav-open='true']:-bottom-[calc(100vh-50px)] left-0 w-full h-[calc(100vh-50px)] bg-ts-blue-medium -z-1 sm:static sm:flex-row sm:h-full lg:flex-col lg:w-auto lg:items-start lg:mt-20 lg:bg-transparent">
         {navItems.map((item) => (
             <li class="flex">
-                <a class="inline-block my-3 px-8 py-2 uppercase font-semibold text-ts-blue-bright hover:text-white transition-all md:my-0" href={`#${item}`}>{item}</a>
+                <a class="inline-block my-3 px-8 py-2 uppercase font-semibold text-ts-blue-bright hover:text-white transition-all before:transition-all md:relative before:md:block before:md:absolute before:md:w-0.5 before:md:h-0 before:md:right-1/2 before:md:-top-1 before:md:bg-white md:my-0 hover:before:md:max-lg:h-2.5 lg:pl-10 before:lg:h-0.5 before:lg:w-4 hover:before:lg:w-8 before:lg:-left-2 before:lg:top-1/2" href={`#${item}`}>{item}</a>
             </li>
         ))}
+        <li class="social"><a href="https://github.com/tybot3k" target="_blank"><Image src={githubSocial} width="40" height="40" alt="GitHub Project Repositor" /></a></li>
+        <li class="social"><a href="https://www.linkedin.com/in/tyson-sukeforth/" target="_blank"><Image src={linkedInSocial} width="40" height="40" alt="LinkedIn Profile" /></a></li>
     </menu>
 </nav>
 

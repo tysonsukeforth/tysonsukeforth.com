@@ -17,3 +17,9 @@
     }
 }
 
+@layer components {
+    .content-container {
+        @apply lg:relative lg:w-160 lg:left-[calc(50%-128px)] xl:w-192
+    }
+}
+

@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets"
+import face from "../assets/face.png"
 import githubSocial from "../assets/github-mark-white.svg"
 import linkedInSocial from "../assets/In-White-40.png"
 const navItems = ["about", "skills", "projects", "contact", "resume"]
@@ -16,14 +17,15 @@ const navItems = ["about", "skills", "projects", "contact", "resume"]
         <h2 class="text-[10px] md:mb-5 md:font-semibold lg:text-[14.5px] xl:text-[17px]">Sr Front End Developer &#x1F7A0; Engineering Manager</h2>
         <h3 class="hidden pr-20 lg:block lg:text-sm xl:text-base">Over 17 years of web development experience in leading development teams and projects to success.</h3>
     </div>
-    <menu data-nav-open="" class="absolute flex flex-col justify-center transform transition-all duration-300 md:justify-evenly items-center bottom-[50px] max-sm:data-[nav-open='true']:-bottom-[calc(100vh-50px)] left-0 w-full h-[calc(100vh-50px)] bg-ts-blue-medium -z-1 sm:static sm:flex-row sm:h-full lg:flex-col lg:w-auto lg:items-start lg:mt-20 lg:bg-transparent">
+    <menu data-nav-open="" class="absolute flex flex-col justify-center transform transition-all duration-300 overflow-hidden md:justify-evenly items-center bottom-[50px] max-sm:data-[nav-open='true']:-bottom-[calc(100vh-50px)] left-0 w-full h-[calc(100vh-50px)] bg-ts-blue-medium -z-1 sm:static sm:flex-row sm:h-full lg:flex-col lg:w-auto lg:items-start lg:mt-20 lg:bg-transparent">
+        <Image class="absolute -left-10 -top-10 opacity-30 mix-blend-soft-light md:hidden -z-1" src={face} alt="I always feel like somebody's watching me..." />
         {navItems.map((item) => (
             <li class="flex">
                 <a class="inline-block my-3 px-8 py-2 uppercase font-semibold text-ts-blue-bright hover:text-white transition-all before:transition-all md:relative before:md:block before:md:absolute before:md:w-0.5 before:md:h-0 before:md:right-1/2 before:md:-top-1 before:md:bg-white md:my-0 hover:before:md:max-lg:h-2.5 lg:pl-10 before:lg:h-0.5 before:lg:w-4 hover:before:lg:w-8 before:lg:-left-2 before:lg:top-1/2" href={`#${item}`}>{item}</a>
             </li>
         ))}
-        <li class="social"><a href="https://github.com/tybot3k" target="_blank"><Image src={githubSocial} width="40" height="40" alt="GitHub Project Repositor" /></a></li>
-        <li class="social"><a href="https://www.linkedin.com/in/tyson-sukeforth/" target="_blank"><Image src={linkedInSocial} width="40" height="40" alt="LinkedIn Profile" /></a></li>
+        <li class="social flex"><a class="my-4 rounded-3xl transition-opacity opacity-80 hover:opacity-100" href="https://github.com/tysonsukeforth" target="_blank"><Image src={githubSocial} width="40" height="40" alt="GitHub Project Repositor" /></a></li>
+        <li class="social flex"><a class="my-4 rounded-3xl transition-opacity opacity-80 hover:opacity-100" href="https://www.linkedin.com/in/tyson-sukeforth/" target="_blank"><Image src={linkedInSocial} width="40" height="40" alt="LinkedIn Profile" /></a></li>
     </menu>
 </nav>
 

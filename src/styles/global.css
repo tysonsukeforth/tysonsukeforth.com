@@ -5,6 +5,13 @@
     --color-ts-blue-light: #6A9FDC;
     --color-ts-blue-medium: #4B6DB0;
     --color-ts-blue-dark: #314B7D;
+
+    --animate-float: float 8s forwards;
+
+    @keyframes float {
+        from {rotate(0deg) translateX(150px) rotate(0deg)};
+        to {rotate(360deg) translateX(150px) rotate(-360deg);}
+    }
 }
 
 @layer base {

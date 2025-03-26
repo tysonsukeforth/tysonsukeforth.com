@@ -21,7 +21,7 @@ const navItems = ["about", "skills", "projects", "contact", "resume"]
         <Image class="absolute -left-50 -top-10 opacity-15 animate-float mix-blend-soft-light sm:hidden -z-1" src={face} alt="I always feel like somebody's watching me..." />
         {navItems.map((item) => (
             <li class="flex">
-                <a class="inline-block my-3 px-8 py-2 uppercase font-semibold text-ts-blue-bright hover:text-white transition-all before:transition-all sm:my-auto md:relative  sm:px-4 before:md:block before:md:absolute before:md:w-0.5 before:md:h-0 before:md:right-1/2 before:md:-top-1 before:md:bg-white md:my-0 hover:before:md:max-lg:h-2.5 lg:pl-10 before:lg:h-0.5 before:lg:w-4 hover:before:lg:w-8 before:lg:-left-2 before:lg:top-1/2" href={`#${item}`}>{item}</a>
+                <a class="inline-block my-3 px-8 py-2 uppercase font-semibold text-ts-blue-bright hover:text-white transition-all before:transition-all sm:my-auto md:relative  sm:px-4 before:md:block before:md:absolute before:md:w-0.5 before:md:h-0 before:md:right-1/2 before:md:-top-1 before:md:bg-ts-blue-bright hover:before:md:bg-white md:my-0 hover:before:md:max-lg:h-2.5 lg:pl-10 before:lg:h-0.5 before:lg:w-4 hover:before:lg:w-8 before:lg:-left-2 before:lg:top-1/2" href={`#${item}`}>{item}</a>
             </li>
         ))}
         <li class="social flex lg:mt-10"><a class="my-4 rounded-3xl transition-opacity opacity-80 hover:opacity-100 sm:mx-4 " href="https://github.com/tysonsukeforth" target="_blank"><Image src={githubSocial} width="40" height="40" class="sm:size-7 lg:size-9" alt="GitHub Project Repositor" /></a></li>

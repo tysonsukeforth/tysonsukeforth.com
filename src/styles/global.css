@@ -23,8 +23,17 @@
         font-family: 'Raleway Variable', sans-serif;
         @apply text-white
     }
+
     h1 {
         @apply font-bold uppercase
+    }
+
+    h4 {
+        @apply pb-5 font-medium text-sm md:text-lg
+    }
+
+    p {
+        @apply pb-4 text-xs md:text-base
     }
 }
 

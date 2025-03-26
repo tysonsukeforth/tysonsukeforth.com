@@ -6,18 +6,18 @@ import linkedInSocial from "../assets/In-White-40.png"
 const navItems = ["about", "skills", "projects", "contact", "resume"]
 ---
 
-<nav class="fixed flex items-center w-full top-0 left-0 px-2 bg-ts-blue-medium h-[50px] border-b-1 border-ts-blue-dark shadow z-20 lg:flex-col lg:top-15 lg:left-auto lg:right-[calc(50%+128px)] lg:w-96 lg:h-auto lg:items-start lg:bg-transparent lg:border-none lg:shadow-none xl:w-128">
-    <button id="MobileNav" class="group sm:hidden flex flex-col justify-between h-[41px] w-[43px] mr-2 p-2 cursor-pointer">
-        <span class="relative block bg-white w-[27] h-[3px] top-0 rounded transform transition-all duration-300 origin-center group-focus:rotate-45 shadow-sm shadow-ts-blue-dark group-focus:scale-x-120 group-focus:top-[11px]"></span>
-        <span class="relative block bg-white w-[27] h-[3px] rounded transform transition-all duration-300 group-focus:opacity-0 group-focus:scale-50"></span>
-        <span class="relative block bg-white w-[27] h-[3px] top-0 rounded transform transition-all duration-300 origin-center group-focus:-rotate-45 shadow-sm shadow-ts-blue-dark group-focus:scale-x-120 group-focus:-top-[11px]"></span>
+<nav data-nav-open="" class="group fixed flex items-center w-full top-0 left-0 px-2 bg-ts-blue-medium h-[50px] border-b-1 border-ts-blue-dark shadow z-20 lg:flex-col lg:top-15 lg:left-auto lg:right-[calc(50%+128px)] lg:w-96 lg:h-auto lg:items-start lg:bg-transparent lg:border-none lg:shadow-none xl:w-128">
+    <button id="MobileNav" class="sm:hidden flex flex-col justify-between h-[41px] w-[43px] mr-2 p-2 cursor-pointer">
+        <span class="relative block bg-white w-[27] h-[3px] top-0 rounded transform transition-all duration-300 origin-center group-data-[nav-open='true']:rotate-45 shadow-sm shadow-ts-blue-dark group-data-[nav-open='true']:scale-x-120 group-data-[nav-open='true']:top-[11px]"></span>
+        <span class="relative block bg-white w-[27] h-[3px] rounded transform transition-all duration-300 group-data-[nav-open='true']:opacity-0 group-data-[nav-open='true']:scale-50"></span>
+        <span class="relative block bg-white w-[27] h-[3px] top-0 rounded transform transition-all duration-300 origin-center group-data-[nav-open='true']:-rotate-45 shadow-sm shadow-ts-blue-dark group-data-[nav-open='true']:scale-x-120 group-data-[nav-open='true']:-top-[11px]"></span>
     </button>
     <div class="sm:hidden lg:relative lg:block lg:before:block lg:before:absolute lg:before:inset-0 lg:before:bg-black/20  lg:before:-z-1">
         <h1 class="text-xl leading-none lg:text-[34px] lg:mix-blend-difference xl:text-[40px]">Tyson Sukeforth</h1>
         <h2 class="text-[10px] md:mb-5 md:font-semibold lg:text-[14.5px] xl:text-[17px]">Sr Front End Developer &#x1F7A0; Engineering Manager</h2>
         <h3 class="hidden pr-20 lg:block lg:text-sm xl:text-base">Over 17 years of web development experience in leading development teams and projects to success.</h3>
     </div>
-    <menu data-nav-open="" class="absolute flex flex-col justify-center items-center transform transition-all duration-300 overflow-hidden sm:w-full sm:justify-evenly bottom-[50px] max-sm:data-[nav-open='true']:-bottom-[calc(100vh-49px)] left-0 w-full h-[calc(100vh-50px)] bg-ts-blue-medium/95 backdrop-blur-xs -z-1 sm:static sm:flex-row sm:h-full sm:backdrop-blur-none lg:flex-col lg:w-auto lg:items-start lg:mt-20 lg:bg-transparent">
+    <menu class="absolute flex flex-col justify-center items-center transform transition-all duration-300  sm:w-full sm:justify-evenly bottom-[50px] max-sm:group-data-[nav-open='true']:-bottom-[calc(100vh-49px)] left-0 w-full h-screen bg-ts-blue-medium/95 backdrop-blur-xs -z-1 sm:static sm:flex-row sm:h-full sm:backdrop-blur-none lg:flex-col lg:w-auto lg:items-start lg:mt-20 lg:bg-transparent">
         <Image class="absolute -left-50 -top-10 opacity-15 animate-float mix-blend-soft-light sm:hidden -z-1" src={face} alt="I always feel like somebody's watching me..." />
         {navItems.map((item) => (
             <li class="flex">
@@ -31,7 +31,7 @@ const navItems = ["about", "skills", "projects", "contact", "resume"]
 
 <script>
     const MobileNav = document.getElementById("MobileNav") as HTMLElement;
-    const Nav = document.querySelector("nav > menu") as HTMLElement;
+    const Nav = document.querySelector("nav") as HTMLElement;
 
     MobileNav!.addEventListener("click", () => {
         Nav.dataset.navOpen = Nav.dataset.navOpen === "" ? "true" : "";

@@ -31,17 +31,20 @@
     }
 
     h4 {
-        @apply mb-5 font-medium text-sm md:text-lg
+        @apply mb-5 text-sm leading-snug md:text-base xl:text-lg
     }
 
     p {
-        @apply mb-4 text-xs md:text-base
+        @apply mb-4 text-xs md:text-sm xl:text-base
     }
 }
 
 @layer components {
     .content-container {
-        @apply lg:relative lg:w-156 lg:left-[calc(50%-128px)] xl:w-192 xl:left-[calc(50%-136px)]
+        @apply lg:relative lg:w-156 lg:left-[calc(50%-128px)] xl:w-192 xl:left-[calc(50%-136px)] 2xl:w-216 2xl:left-[calc(50%-152px)]
     }
 }
 
+@media screen and (width = 1280px) {
+    body {margin:0}
+}

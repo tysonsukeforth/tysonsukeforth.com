@@ -41,7 +41,7 @@
 
 @layer components {
     .content-container {
-        @apply lg:relative lg:w-156 lg:left-[calc(50%-128px)] xl:w-192 xl:left-[calc(50%-136px)] 2xl:w-216 2xl:left-[calc(50%-152px)]
+        @apply lg:relative lg:w-156 lg:left-[calc(50%-128px)] xl:w-191 2xl:w-210
     }
 }
 

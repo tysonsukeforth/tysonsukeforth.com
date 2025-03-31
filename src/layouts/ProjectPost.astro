@@ -1,0 +1,18 @@
+---
+const { frontmatter } = Astro.props
+---
+
+<div>
+    <h3>{frontmatter.title}</h3>
+    <p>{frontmatter.description}</p>
+    <slot />
+    <div>
+    </div>
+    <ul class="flex gap-2">
+        {
+            frontmatter.tags.map((tag: string) => (
+                <li class="skill-tag">{tag}</li>
+            ))
+        }
+    </ul>
+</div>

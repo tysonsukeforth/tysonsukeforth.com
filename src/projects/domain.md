@@ -1,10 +1,11 @@
 ---
 title: 'Domain.com'
 description: "Lead Developer for Domain.com's Product Site"
+endDate: 2023-12-17
 images:
-- src: 'https://picsum.photos/300/200'
+- src: 'https://picsum.photos/400/600'
   alt: 'Domain.com homepage'
-- src: 'https://picsum.photos/200/300'
+- src: 'https://picsum.photos/600/400'
   alt: 'Domain.com product page'
 tags: ["React", "JIRA", "Scrum", "CI/CD"]
 ---

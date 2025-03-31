@@ -5,6 +5,7 @@ import ProjectPost from "../layouts/ProjectPost.astro"
 import { isRenderTemplateResult } from "astro/runtime/server/render/astro/render-template.js";
 
 const projects = await getCollection('projectCollection')
+projects.sort((a, b) => b.data.endDate.valueOf() - a.data.endDate.valueOf())
 ---
 
 <div id="projects" class="bg-ts-blue-dark min-h-screen">

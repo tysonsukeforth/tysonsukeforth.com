@@ -1,10 +1,11 @@
 ---
 title: 'Hostgator.com'
 description: "Lead Developer for HostGator's Product Site"
+endDate: 2023-12-18
 images:
-- src: 'https://picsum.photos/300/200'
+- src: 'https://picsum.photos/600/400'
   alt: 'HostGator.com homepage'
-- src: 'https://picsum.photos/200/300'
+- src: 'https://picsum.photos/400/600'
   alt: 'Hostgator.com product page'
 tags: ["React", "JIRA", "Scrum", "Mentoring", "Contentful CMS", "CI/CD"]
 ---

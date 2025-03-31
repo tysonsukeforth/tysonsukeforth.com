@@ -1,18 +1,26 @@
 ---
 const { frontmatter } = Astro.props
+import { Image } from 'astro:assets';
 ---
 
-<div>
-    <h3>{frontmatter.title}</h3>
-    <p>{frontmatter.description}</p>
-    <slot />
-    <div>
-    </div>
-    <ul class="flex gap-2">
+<div class="flex flex-col mb-20">
+    <div class="flex flex-col gap-4">
         {
-            frontmatter.tags.map((tag: string) => (
-                <li class="skill-tag">{tag}</li>
+            frontmatter.images.map((image: { src: string, alt: string }) => (
+                <img src={image.src} alt={image.alt} />
             ))
         }
-    </ul>
+    </div>
+    <div>
+        <h3 class="my-4 text-2xl font-bold text-ts-blue-bright relative before:absolute before:block before:-inset-1 before:-left-6 before:bg-black/10 after:absolute after:block after:size-5 after:-left-7.5 after:-top-2.5 after:bg-black/10 ">{frontmatter.title}</h3>
+        <p>{frontmatter.description}</p>
+        <slot />
+        <ul class="flex flex-wrap gap-2">
+            {
+                frontmatter.tags.map((tag: string) => (
+                    <li class="skill-tag text-base">{tag}</li>
+                ))
+            }
+        </ul>
+    </div>
 </div>

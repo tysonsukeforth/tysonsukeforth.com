@@ -35,7 +35,7 @@
     }
 
     p {
-        @apply mb-4 text-xs md:text-sm xl:text-base
+        @apply mb-4 text-xs md:text-sm lg:text-base
     }
 }
 

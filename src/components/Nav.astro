@@ -32,8 +32,15 @@ const navItems = ["about", "skills", "projects", "contact", "resume"]
 <script>
     const MobileNav = document.getElementById("MobileNav") as HTMLElement;
     const Nav = document.querySelector("nav") as HTMLElement;
+    const links = document.querySelectorAll("menu a");
 
-    MobileNav!.addEventListener("click", () => {
+    MobileNav.addEventListener("click", () => {
         Nav.dataset.navOpen = Nav.dataset.navOpen === "" ? "true" : "";
     });
+
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            Nav.dataset.navOpen = "";
+        });
+    })
 </script>

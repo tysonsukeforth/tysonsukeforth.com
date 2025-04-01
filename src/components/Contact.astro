@@ -18,12 +18,19 @@
             <input type="hidden" name="access_key" value="302c56de-92fd-4f15-94e3-95e9166f314d" />
 
             <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
+
+            <input type="hidden" name="from_name" value="Tyson Sukeforth">
+
+            <input type="hidden" name="subject" value="TysonSukeforth.com Contact Form Submission">
+
             <div class="mb-5">
+                <label for="name" class="sr-only">Name</label>
                 <input
+                id="name"
                 type="text"
                 placeholder="Name"
                 required
-                class="w-full px-4 py-3 text-lg border bg-white placeholder:text-slate-400 rounded-xs outline-none focus:ring-4 border-ts-blue-dark focus:border-ts-blue-light ring-slate-100"
+                class="w-full px-4 py-3 text-lg text-gray-900 border bg-white placeholder:text-slate-400 rounded-xs outline-none focus:ring-4 border-ts-blue-dark focus:border-ts-blue-light ring-ts-blue-bright"
                 name="name"
                 />
                 <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
@@ -31,13 +38,14 @@
                 </div>
             </div>
             <div class="mb-5">
-                <label for="email_address" class="sr-only">Email Address</label><input
+                <label for="email_address" class="sr-only">Email Address</label>
+                <input
                 id="email_address"
                 type="email"
-                placeholder="Email Address"
+                placeholder="Email"
                 name="email"
                 required
-                class="w-full px-4 py-3 text-lg border bg-white placeholder:text-slate-400 rounded-xs outline-none focus:ring-4 border-ts-blue-dark focus:border-ts-blue-light ring-slate-100"
+                class="w-full px-4 py-3 text-lg text-gray-900 border bg-white placeholder:text-slate-400 rounded-xs outline-none focus:ring-4 border-ts-blue-dark focus:border-ts-blue-light ring-ts-blue-bright"
                 />
                 <div class="empty-feedback text-red-400 text-sm mt-1">
                     Please provide your email address.
@@ -46,19 +54,36 @@
                     Please provide a valid email address.
                 </div>
             </div>
+            <div class="mb-5">
+                <label for="phone" class="sr-only">Phone Number (optional)</label>
+                <input
+                id="phone"
+                type="text"
+                placeholder="Phone Number (optional)"
+                class="w-full px-4 py-3 text-lg text-gray-900 border bg-white placeholder:text-slate-400 rounded-xs outline-none focus:ring-4 border-ts-blue-dark focus:border-ts-blue-light ring-ts-blue-bright"
+                name="phone"
+                />
+                <div class="invalid-feedback text-red-400 text-sm mt-1">
+                    Please provide a valid phone number.
+                </div>
+            </div>
             <div class="mb-3">
+                <label for="message" class="sr-only">Your Message</label>
                 <textarea
+                id="message"
                 name="message"
+                rows="5"
                 required
                 placeholder="Your Message"
-                class="w-full px-4 py-3 text-lg border bg-white placeholder:text-slate-400 rounded-xs outline-none focus:ring-4 border-ts-blue-dark focus:border-ts-blue-light ring-slate-100"
+                class="w-full px-4 py-3 text-lg text-gray-900 border bg-white placeholder:text-slate-400 rounded-xs outline-none focus:ring-4 border-ts-blue-dark focus:border-ts-blue-light ring-ts-blue-bright"
                 ></textarea>
                 <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
                     Please enter your message.
                 </div>
             </div>
-            <button type="submit">Send Message</button>
-            <div id="result" class="mt-3 text-center"></div>
+            <div class="h-captcha" data-captcha="true"></div>
+            <button class="my-8 px-12 py-3 font-bold text-ts-blue-dark uppercase bg-ts-blue-bright cursor-pointer outline-none border border-ts-blue-dark rounded-xs shadow-xs transition-all hover:bg-white hover:border-ts-blue-medium hover:shadow-lg active:ring-4 focus:ring-4 ring-ts-blue-bright" type="submit">Send Message</button>
+            <div id="result" class="mt-4 text-lg font-medium"></div>
         </form>
 
         <style>
@@ -82,61 +107,59 @@
         </style>
 
         <script is:inline>
+            document.addEventListener("DOMContentLoaded", () => {
 
-        // use astro:page-load event if you are using View Transitions
+                const form = document.getElementById("form");
+                const result = document.getElementById("result");
 
-        document.addEventListener("DOMContentLoaded", () => {
-        
-            const form = document.getElementById("form");
-            const result = document.getElementById("result");
-
-            form.addEventListener("submit", function (e) {
-                e.preventDefault();
-                form.classList.add("was-validated");
-                if (!form.checkValidity()) {
-                form.querySelectorAll(":invalid")[0].focus();
-                return;
-                }
-                const formData = new FormData(form);
-                const object = Object.fromEntries(formData);
-                const json = JSON.stringify(object);
-
-                result.innerHTML = "Sending...";
-
-                fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                },
-                body: json,
-                })
-                .then(async (response) => {
-                    let json = await response.json();
-                    if (response.status == 200) {
-                    result.classList.add("text-green-500");
-                    result.innerHTML = json.message;
-                    } else {
-                    console.log(response);
-                    result.classList.add("text-red-500");
-                    result.innerHTML = json.message;
+                form.addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    form.classList.add("was-validated");
+                    if (!form.checkValidity()) {
+                    form.querySelectorAll(":invalid")[0].focus();
+                    return;
                     }
-                })
-                .catch((error) => {
-                    console.log(error);
-                    result.innerHTML = "Something went wrong!";
-                })
-                .then(function () {
-                    form.reset();
-                    form.classList.remove("was-validated");
-                    setTimeout(() => {
-                    result.style.display = "none";
-                    }, 5000);
+                    const formData = new FormData(form);
+                    const object = Object.fromEntries(formData);
+                    const json = JSON.stringify(object);
+
+                    result.innerHTML = "Sending...";
+
+                    fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json",
+                    },
+                    body: json,
+                    })
+                    .then(async (response) => {
+                        let json = await response.json();
+                        if (response.status == 200) {
+                        result.classList.add("text-ts-blue-bright");
+                        result.innerHTML = json.message;
+                        } else {
+                        console.log(response);
+                        result.classList.add("text-red-500");
+                        result.innerHTML = json.message;
+                        }
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                        result.innerHTML = "Something went wrong!";
+                    })
+                    .then(function () {
+                        form.reset();
+                        form.classList.remove("was-validated");
+                        setTimeout(() => {
+                        result.style.display = "none";
+                        }, 8000);
+                    });
                 });
-            });
-            },
-            { once: true },
-        );
+                },
+                { once: true },
+            );
         </script>
+        <script is:inline src="https://web3forms.com/client/script.js" async defer></script>
     </div>
 </div>

@@ -2,7 +2,7 @@
 title: 'Hostgator.com'
 description: "Lead Developer for HostGator's Product Site"
 endDate: 2023-12-18
-cover: '../assets/888-600x400.jpg'
+cover: '../assets/hostgator.jpg'
 coverAlt: 'Hostgator.com homepage'
 tags: ["React", "JIRA", "Scrum", "Mentoring", "Contentful CMS", "CI/CD"]
 ---

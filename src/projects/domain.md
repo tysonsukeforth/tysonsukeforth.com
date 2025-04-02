@@ -2,7 +2,7 @@
 title: 'Domain.com'
 description: "Lead Developer for Domain.com's Product Site"
 endDate: 2023-12-17
-cover: '../assets/202-600x400.jpg'
+cover: '../assets/domain.jpg'
 coverAlt: 'Domain.com homepage'
 tags: ["React", "JIRA", "Scrum", "CI/CD"]
 ---

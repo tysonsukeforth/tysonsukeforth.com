@@ -1,1 +1,58 @@
 @import "tailwindcss";
+
+@theme {
+    --color-ts-blue-bright: #B0D5FF;
+    --color-ts-blue-light: #6A9FDC;
+    --color-ts-blue-medium: #4B6DB0;
+    --color-ts-blue-dark: #314B7D;
+
+    --breakpoint-2xl: 90rem;
+
+    --animate-float: float 24s linear infinite;
+
+    @keyframes float {
+        from {
+            transform: rotate(0deg) translateX(30px) rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg) translateX(30px) rotate(-360deg);
+        }
+    }
+}
+
+@layer base {
+    body {
+        font-family: 'Raleway Variable', sans-serif;
+        @apply text-white
+    }
+
+    h1 {
+        @apply font-bold uppercase
+    }
+
+    h4 {
+        @apply mb-5 text-sm leading-snug md:text-base xl:text-lg
+    }
+
+    p {
+        @apply mb-4 text-xs md:text-sm lg:text-base
+    }
+
+    p a {
+        @apply text-white underline
+    }
+}
+
+@layer components {
+    .content-container {
+        @apply lg:relative lg:w-156 lg:left-[calc(50%-128px)] xl:w-191 2xl:w-210
+    }
+
+    .skill-tag {
+        @apply px-4 py-2 text-white text-sm lg:text-lg font-semibold bg-ts-blue-medium
+    }
+}
+
+@media screen and (width = 1280px) {
+    body {margin:0}
+}

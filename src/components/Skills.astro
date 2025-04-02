@@ -1,0 +1,28 @@
+---
+const devSkills = ["React", "UI Development", "HTML", "CSS/SCSS", "Tailwind CSS", "Figma", "WordPress", "Bootstrap/Material Design UI", "Astro", "SEO/Schema Markup", "Lottie/GSAP Animation", "A/B Testing", "Git Versioning", "Code Reviews", "CI/CD", "Synthetic Monitoring", "CMS Integration", "Contentful", "Optimizely"]
+const devLearning = ["React Native"]
+const managementSkills = ["Agile/Scrum", "Team Leadership", "Mentoring", "Project Management", "Process Improvement", "Stakeholder Management", "Cross-Functional Collaboration", "Hiring & Onboarding", "Performance Reviews", "Constructive Feedback", "Time Management", "Production Deployment", "Root Cause Analysis"]
+---
+
+<div id="skills" class="bg-white min-h-screen text-black lg">
+    <div class="content-container px-5 py-12 lg:py-24 lg:pl-24">
+        <p>Over the years I have worked with a variety of tools and technologies. Here are some of the ones I am most familiar with:</p>
+        <h3 class="my-8 text-xl lg:text-2xl font-bold uppercase relative mt-12 before:absolute before:block before:-inset-y-1 before:-left-12 before:-right-4 before:bg-black/5">Development Skills</h3>
+        <ul class="flex flex-wrap items-center justify-start gap-2 lg:gap-4 mb-8">
+            {devSkills.map((skill) => (
+                <li class="skill-tag">{skill}</li>
+            ))}
+        </ul>
+        <h4 class="my-5 text-lg lg:text-xl font-bold">Currently Learning</h4>
+        <ul class="flex flex-wrap items-center justify-start gap-2 lg:gap-4 mb-16">
+            {devLearning.map((skill) => (
+                <li class="skill-tag bg-ts-blue-light">{skill}</li>
+            ))}
+        </ul>
+        <h3 class="my-8 text-xl lg:text-2xl font-bold uppercase relative mt-12 before:absolute before:block before:-inset-y-1 before:-left-12 before:-right-4 before:bg-black/5">Management Skills</h3>
+        <ul class="flex flex-wrap items-center justify-start gap-2 lg:gap-4">
+            {managementSkills.map((skill) => (
+                <li class="skill-tag">{skill}</li>
+            ))}
+        </ul>
+</div>

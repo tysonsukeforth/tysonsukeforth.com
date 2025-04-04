@@ -4,7 +4,7 @@ description: "Lead Developer for HostGator's FOS Team"
 endDate: 2023-12-18
 cover: '../assets/hostgator.jpg'
 coverAlt: 'Hostgator.com homepage'
-tags: ["React", "CSS/Sass", "JIRA", "Scrum", "Mentoring", "Contentful CMS", "CI/CD"]
+tags: ["React", "CSS/Sass", "JIRA", "Scrum", "Mentoring", "Project Management", "Contentful CMS", "CI/CD"]
 ---
 Product site for HostGator's various web hosting and domain registration services. Created and updated product sites in a fast paced, CI/CD marketing environment.
 

@@ -35,13 +35,21 @@
     }
 
     p {
-        @apply mb-4 text-xs md:text-sm xl:text-base
+        @apply mb-4 text-xs md:text-sm lg:text-base
+    }
+
+    p a {
+        @apply text-white underline
     }
 }
 
 @layer components {
     .content-container {
-        @apply lg:relative lg:w-156 lg:left-[calc(50%-128px)] xl:w-192 xl:left-[calc(50%-136px)] 2xl:w-216 2xl:left-[calc(50%-152px)]
+        @apply lg:relative lg:w-156 lg:left-[calc(50%-128px)] xl:w-191 2xl:w-210
+    }
+
+    .skill-tag {
+        @apply px-4 py-2 text-white text-sm lg:text-lg font-semibold bg-ts-blue-medium
     }
 }
 

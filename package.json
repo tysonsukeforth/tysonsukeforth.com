@@ -1,7 +1,13 @@
 {
-  "name": "",
+  "name": "tysonsukeforth.com",
+  "description": "Personal Portfolio Website",
+  "version": "0.9.0",
+  "author": "Tyson Sukeforth",
   "type": "module",
-  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tysonsukeforth/tysonsukeforth.com"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

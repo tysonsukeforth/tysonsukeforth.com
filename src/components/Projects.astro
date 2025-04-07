@@ -1,1 +1,24 @@
-<div id="projects" class="bg-ts-blue-dark min-h-screen"></div>
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, render } from "astro:content"
+import ProjectPost from "../layouts/ProjectPost.astro"
+import { isRenderTemplateResult } from "astro/runtime/server/render/astro/render-template.js";
+
+const projects = await getCollection('projectCollection')
+projects.sort((a, b) => b.data.endDate.valueOf() - a.data.endDate.valueOf())
+---
+
+<div id="projects" class="bg-ts-blue-dark min-h-screen">
+    <div class="content-container px-5 py-12 lg:py-24 lg:pl-24">
+        {
+            projects.map(async (project) => {
+                const { Content } = await render(project)
+                return (
+                    <ProjectPost frontmatter={project.data}>
+                        <Content />
+                    </ProjectPost>
+                )
+            })
+        }
+    </div>
+</div>

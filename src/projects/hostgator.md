@@ -1,11 +1,15 @@
 ---
 title: 'Hostgator.com'
-description: "Lead Developer for HostGator's Product Site"
+description: "Lead Developer for HostGator's FOS Team"
 endDate: 2023-12-18
-cover: '../assets/888-600x400.jpg'
+cover: '../assets/hostgator.jpg'
 coverAlt: 'Hostgator.com homepage'
-tags: ["React", "JIRA", "Scrum", "Mentoring", "Contentful CMS", "CI/CD"]
+tags: ["React", "CSS/Sass", "JIRA", "Scrum", "Mentoring", "Project Management", "Contentful CMS", "CI/CD"]
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue lacus, semper placerat ultrices ut, pellentesque eget elit. Cras non eleifend ipsum. Suspendisse in malesuada sem. Mauris posuere, diam eu molestie ultricies, tellus orci suscipit tortor, a mattis lectus mi in odio. Proin sollicitudin enim at felis tincidunt convallis. Sed at lorem et nisl mollis gravida. Nam iaculis orci sed diam ornare tristique.
+Product site for HostGator's various web hosting and domain registration services. Created and updated product sites in a fast paced, CI/CD marketing environment.
 
-Fusce et facilisis massa. Nunc pharetra felis risus, eget convallis nulla vestibulum vitae. Aliquam placerat nunc gravida, ornare orci cursus, venenatis risus.
+As Lead Developer my role was a mix of direct development and engineering management. My technical specialty was in tackling complex and/or scalable UI components. I also mentored the team's junior developers in best practices, overcoming technical challenges, and skill training.
+
+On the managerial side, I was the liaison between the development team of six, and the Product Owner, Stakeholders, and various other teams and departments. Internally I acted as team scrummaster and conducted our development ceremonies. Regularly communicated with each team member for onboarding and career pathing.
+
+Our cornerstone achievement was a complete rewrite of the website, moving from an aging Perl/Mason stack to a modern React/Next.js architecture with Contentful CMS integration. I took point on breaking down the large project into a manageable roadmap, developing the CMS content structure, and taking on more challenging development tasks.

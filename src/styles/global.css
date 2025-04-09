@@ -45,11 +45,19 @@
 
 @layer components {
     .content-container {
-        @apply lg:relative lg:w-156 lg:left-[calc(50%-128px)] xl:w-191 2xl:w-210
+        @apply px-6 py-16 md:px-10 lg:py-20 lg:pl-16 lg:relative lg:w-156 lg:left-[calc(50%-128px)] xl:w-191 2xl:w-210
+    }
+
+    .anchor {
+        @apply relative -top-[114px] lg:-top-20
     }
 
     .skill-tag {
         @apply px-4 py-2 text-white text-sm lg:text-lg font-semibold bg-ts-blue-medium
+    }
+
+    .text-bg {
+        @apply relative before:absolute before:block before:-inset-y-1 before:bg-black/5 before:-left-4 before:-right-6 md:before:-left-4 md:before:-right-10 lg:before:-left-6 lg:before:-right-24  after:absolute after:block after:size-4 after:-left-[22px] after:-top-2.5 lg:after:-left-[30px] after:bg-black/5
     }
 }
 

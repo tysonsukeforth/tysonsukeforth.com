@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import Hamburger from "./Hamburger.astro";
 import face from "../assets/face-c.svg";
 import githubSocial from "../assets/github-mark-white.svg";
 import linkedInSocial from "../assets/In-White-40.png";
@@ -32,20 +33,7 @@ const navItems = [
   data-nav-open=""
   class="group fixed flex lg:flex-col items-center w-full lg:w-94 xl:w-118 top-0 left-0 lg:left-auto lg:right-[calc(50%+128px)] px-2 lg:pt-20 bg-ts-blue-medium h-[50px] border-b-1 border-ts-blue-dark shadow z-20 lg:h-auto lg:items-start lg:bg-transparent lg:border-none lg:shadow-none lg:before:block lg:before:absolute lg:before:h-screen lg:before:w-[calc(50vw-128px)] lg:before:top-0 lg:before:right-0 lg:before:bottom-0 lg:before:bg-linear-to-r lg:before:from-ts-blue-dark lg:before:to-ts-blue-medium/60 lg:before:-z-1"
 >
-  <button
-    id="MobileNav"
-    class="sm:hidden flex flex-col justify-between h-[41px] w-[43px] mr-2 p-2 cursor-pointer"
-  >
-    <span
-      class="relative block bg-white w-[27] h-[3px] top-0 rounded transform transition-all duration-300 origin-center group-data-[nav-open='true']:rotate-45 shadow-sm shadow-ts-blue-dark group-data-[nav-open='true']:scale-x-120 group-data-[nav-open='true']:top-[11px]"
-    ></span>
-    <span
-      class="relative block bg-white w-[27] h-[3px] rounded transform transition-all duration-300 group-data-[nav-open='true']:opacity-0 group-data-[nav-open='true']:scale-50"
-    ></span>
-    <span
-      class="relative block bg-white w-[27] h-[3px] top-0 rounded transform transition-all duration-300 origin-center group-data-[nav-open='true']:-rotate-45 shadow-sm shadow-ts-blue-dark group-data-[nav-open='true']:scale-x-120 group-data-[nav-open='true']:-top-[11px]"
-    ></span>
-  </button>
+  <Hamburger id="MobileNav" />
   <div class="sm:hidden lg:relative lg:block">
     <h1 class="text-xl leading-none lg:text-[34px] 2xl:text-[40px]">
       Tyson Sukeforth

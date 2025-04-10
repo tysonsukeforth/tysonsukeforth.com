@@ -8,7 +8,7 @@
 
     --breakpoint-2xl: 90rem;
 
-    --animate-float: float 24s linear infinite;
+    --animate-float: float 30s linear infinite;
 
     @keyframes float {
         from {
@@ -18,12 +18,26 @@
             transform: rotate(360deg) translateX(30px) rotate(-360deg);
         }
     }
+
+    --animate-jolt: jolt 0.1s ease-out forwards;
+
+    @keyframes jolt {
+        0% {
+            transform: translateY(0);
+        }
+        5% {
+            transform: translateY(-5px) scale(1.02);
+        }
+        100% {
+            transform: translateY(0) scale(1);
+        }
+    }
 }
 
 @layer base {
     body {
         font-family: 'Raleway Variable', sans-serif;
-        @apply text-white
+        @apply text-white caret-ts-blue-dark
     }
 
     h1 {
@@ -59,6 +73,22 @@
     .text-bg {
         @apply relative before:absolute before:block before:-inset-y-1 before:bg-black/5 before:-left-4 before:-right-6 md:before:-left-4 md:before:-right-10 lg:before:-left-6 lg:before:-right-24  after:absolute after:block after:size-4 after:-left-[22px] after:-top-2.5 lg:after:-left-[30px] after:bg-black/5
     }
+}
+
+.face-hover > span {
+    @apply flex items-center
+}
+
+.face-hover .second-icon {
+    opacity: 0;
+}
+
+.face-hover:hover .first-icon {
+    opacity: 0;
+}
+
+.face-hover:hover .second-icon {
+    opacity: 1;
 }
 
 @media screen and (width = 1280px) {

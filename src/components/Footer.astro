@@ -1,12 +1,13 @@
 ---
-import { Image } from "astro:assets"
-import face from "../assets/face.png"
+import face from "../assets/face-with-hover.svg?raw"
 ---
 <div id="footer" class="bg-ts-blue-medium">
     <div class="content-container px-2 py-12 lg:py-24 lg:pl-24">
         <div class="flex items-center gap-4">
-            <span class="flex justify-center shrink-0 items-center size-25 ml-2 rounded-full bg-ts-blue-dark z-20">
-                <Image class="w-[51px] h-[57px] mt-3" src={face} width={102} height={113} alt="I always feel like somebody's watching me..." />
+            <span class="group flex justify-center shrink-0 items-center size-25 ml-2 rounded-full bg-ts-blue-dark z-20">
+                <span class="face-hover group-hover:animate-jolt w-[51px] h-[57px] mt-[5%]">
+                    <Fragment set:html={face} />
+                </span>
             </span>
             <span class="flex flex-col justify-items-center gap-2">
                 <p class="m-0 text-sm text-ts-blue-bright">Designed in <a href="https://www.figma.com/" target="_blank">Figma</a> and coded in <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> by yours truly. Built with <a href="https://astro.build/" target="_blank">Astro</a> Server Side Rendering and <a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a>, deployed with <a href="https://www.cloudflare.com/" target="_blank">Cloudflare</a>.</p>

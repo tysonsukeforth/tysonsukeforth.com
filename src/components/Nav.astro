@@ -1,63 +1,130 @@
 ---
-import { Image } from "astro:assets"
-import face from "../assets/face.png"
-import githubSocial from "../assets/github-mark-white.svg"
-import linkedInSocial from "../assets/In-White-40.png"
+import { Image } from "astro:assets";
+import face from "../assets/face-c.svg";
+import githubSocial from "../assets/github-mark-white.svg";
+import linkedInSocial from "../assets/In-White-40.png";
 const navItems = [
-    {
-        text: "About",
-        href: "#about"
-    },{
-        text: "Skills",
-        href: "#skills"
-    }, {
-        text: "Projects",
-        href: "#projects"
-    }, {
-        text: "Contact",
-        href: "#contact"
-    }, {
-        text: "Resume",
-        href: "./public/TysonSukeforth-SrFrontEndDeveloper-EngineeringManager.pdf"
-    }
-]
+  {
+    text: "About",
+    href: "#about",
+  },
+  {
+    text: "Skills",
+    href: "#skills",
+  },
+  {
+    text: "Projects",
+    href: "#projects",
+  },
+  {
+    text: "Contact",
+    href: "#contact",
+  },
+  {
+    text: "Resume",
+    href: "./public/TysonSukeforth-SrFrontEndDeveloper-EngineeringManager.pdf",
+    target: "_blank",
+  },
+];
 ---
 
-<nav data-nav-open="" class="group fixed flex lg:flex-col items-center w-full lg:w-94 xl:w-118 top-0 left-0 lg:left-auto lg:right-[calc(50%+128px)] px-2 lg:pt-20 bg-ts-blue-medium h-[50px] border-b-1 border-ts-blue-dark shadow z-20 lg:h-auto lg:items-start lg:bg-transparent lg:border-none lg:shadow-none lg:before:block lg:before:absolute lg:before:h-screen lg:before:w-[calc(50vw-128px)] lg:before:top-0 lg:before:right-0  lg:before:bottom-0 lg:before:bg-linear-to-r lg:before:from-ts-blue-dark lg:before:to-ts-blue-medium/60 lg:before:-z-1">
-    <button id="MobileNav" class="sm:hidden flex flex-col justify-between h-[41px] w-[43px] mr-2 p-2 cursor-pointer">
-        <span class="relative block bg-white w-[27] h-[3px] top-0 rounded transform transition-all duration-300 origin-center group-data-[nav-open='true']:rotate-45 shadow-sm shadow-ts-blue-dark group-data-[nav-open='true']:scale-x-120 group-data-[nav-open='true']:top-[11px]"></span>
-        <span class="relative block bg-white w-[27] h-[3px] rounded transform transition-all duration-300 group-data-[nav-open='true']:opacity-0 group-data-[nav-open='true']:scale-50"></span>
-        <span class="relative block bg-white w-[27] h-[3px] top-0 rounded transform transition-all duration-300 origin-center group-data-[nav-open='true']:-rotate-45 shadow-sm shadow-ts-blue-dark group-data-[nav-open='true']:scale-x-120 group-data-[nav-open='true']:-top-[11px]"></span>
-    </button>
-    <div class="sm:hidden lg:relative lg:block">
-        <h1 class="text-xl leading-none lg:text-[34px] 2xl:text-[40px]">Tyson Sukeforth</h1>
-        <h2 class="text-[10px] md:mb-5 md:font-semibold lg:text-[14.5px] 2xl:text-[17px]">Sr Front End Developer &#x1F7A0; Engineering Manager</h2>
-        <h3 class="hidden pr-20 lg:block lg:text-sm 2xl:text-base">Over 17 years of web development experience in leading development teams and projects to success.</h3>
-    </div>
-    <menu class="absolute flex flex-col justify-center items-center transform transition-all duration-300 sm:w-full sm:justify-evenly bottom-[50px] max-sm:group-data-[nav-open='true']:-bottom-[calc(100vh-49px)] left-0 w-full h-screen bg-ts-blue-medium/97 backdrop-blur-xs -z-1 sm:static sm:flex-row sm:h-full sm:backdrop-blur-none sm:transition-none lg:flex-col lg:w-auto lg:items-start lg:mt-20 lg:bg-transparent">
-        <Image class="absolute -left-50 -top-10 opacity-15 animate-float mix-blend-soft-light sm:hidden -z-1" src={face} alt="I always feel like somebody's watching me..." />
-        {navItems.map((item) => (
-            <li class="flex">
-                <a class="inline-block my-3 px-8 py-2 uppercase font-semibold text-ts-blue-bright hover:text-white transition-all before:transition-all sm:my-auto md:relative  sm:px-4 before:md:block before:md:absolute before:md:w-0.5 before:md:h-0 before:md:right-1/2 before:md:-top-1 before:md:bg-ts-blue-bright hover:before:md:bg-white md:my-0 hover:before:md:max-lg:h-2.5 lg:pl-10 before:lg:h-0.5 before:lg:w-4 hover:before:lg:w-8 before:lg:-left-2 before:lg:top-1/2" href={item.href}>{item.text}</a>
-            </li>
-        ))}
-        <li class="social flex lg:mt-10"><a class="my-4 rounded-3xl transition-opacity opacity-80 hover:opacity-100 sm:mx-4 " href="https://github.com/tysonsukeforth" target="_blank"><Image src={githubSocial} width="40" height="40" class="sm:size-7 lg:size-9" alt="GitHub Project Repositor" /></a></li>
-        <li class="social flex"><a class="my-4 rounded-3xl transition-opacity opacity-80 hover:opacity-100 md:mx-4" href="https://www.linkedin.com/in/tyson-sukeforth/" target="_blank"><Image src={linkedInSocial} width="40" height="40" class="sm:size-7 lg:size-9" alt="LinkedIn Profile" /></a></li>
-    </menu>
+<nav
+  data-nav-open=""
+  class="group fixed flex lg:flex-col items-center w-full lg:w-94 xl:w-118 top-0 left-0 lg:left-auto lg:right-[calc(50%+128px)] px-2 lg:pt-20 bg-ts-blue-medium h-[50px] border-b-1 border-ts-blue-dark shadow z-20 lg:h-auto lg:items-start lg:bg-transparent lg:border-none lg:shadow-none lg:before:block lg:before:absolute lg:before:h-screen lg:before:w-[calc(50vw-128px)] lg:before:top-0 lg:before:right-0 lg:before:bottom-0 lg:before:bg-linear-to-r lg:before:from-ts-blue-dark lg:before:to-ts-blue-medium/60 lg:before:-z-1"
+>
+  <button
+    id="MobileNav"
+    class="sm:hidden flex flex-col justify-between h-[41px] w-[43px] mr-2 p-2 cursor-pointer"
+  >
+    <span
+      class="relative block bg-white w-[27] h-[3px] top-0 rounded transform transition-all duration-300 origin-center group-data-[nav-open='true']:rotate-45 shadow-sm shadow-ts-blue-dark group-data-[nav-open='true']:scale-x-120 group-data-[nav-open='true']:top-[11px]"
+    ></span>
+    <span
+      class="relative block bg-white w-[27] h-[3px] rounded transform transition-all duration-300 group-data-[nav-open='true']:opacity-0 group-data-[nav-open='true']:scale-50"
+    ></span>
+    <span
+      class="relative block bg-white w-[27] h-[3px] top-0 rounded transform transition-all duration-300 origin-center group-data-[nav-open='true']:-rotate-45 shadow-sm shadow-ts-blue-dark group-data-[nav-open='true']:scale-x-120 group-data-[nav-open='true']:-top-[11px]"
+    ></span>
+  </button>
+  <div class="sm:hidden lg:relative lg:block">
+    <h1 class="text-xl leading-none lg:text-[34px] 2xl:text-[40px]">
+      Tyson Sukeforth
+    </h1>
+    <h2
+      class="text-[10px] md:mb-5 md:font-semibold lg:text-[14.5px] 2xl:text-[17px]"
+    >
+      Sr Front End Developer &#x1F7A0; Engineering Manager
+    </h2>
+    <h3 class="hidden pr-20 lg:block lg:text-sm 2xl:text-base">
+      Over 17 years of web development experience in leading development teams
+      and projects to success.
+    </h3>
+  </div>
+  <menu
+    class="absolute flex flex-col justify-center items-center transform transition-all duration-300 sm:w-full sm:justify-evenly bottom-[50px] max-sm:group-data-[nav-open='true']:-bottom-[calc(100vh-49px)] left-0 w-full h-screen bg-ts-blue-medium/97 backdrop-blur-xs -z-1 sm:static sm:flex-row sm:h-full sm:backdrop-blur-none sm:transition-none lg:flex-col lg:w-auto lg:items-start lg:mt-20 lg:bg-transparent"
+  >
+    <Image
+      class="absolute -left-50 -top-10 opacity-15 animate-float mix-blend-soft-light sm:hidden -z-1"
+      src={face}
+      alt="I always feel like somebody's watching me..."
+      loading="lazy"
+    />
+    {
+      navItems.map((item) => (
+        <li class="flex">
+          <a
+            class="inline-block my-3 px-8 py-2 uppercase font-semibold text-ts-blue-bright hover:text-white transition-all before:transition-all sm:my-auto md:relative  sm:px-4 before:md:block before:md:absolute before:md:w-0.5 before:md:h-0 before:md:right-1/2 before:md:-top-1 before:md:bg-ts-blue-bright hover:before:md:bg-white md:my-0 hover:before:md:max-lg:h-2.5 lg:pl-10 before:lg:h-0.5 before:lg:w-4 hover:before:lg:w-8 before:lg:-left-2 before:lg:top-1/2"
+            href={item.href}
+            target={item.target}
+          >
+            {item.text}
+          </a>
+        </li>
+      ))
+    }
+    <li class="social flex lg:mt-10">
+      <a
+        class="my-4 rounded-3xl transition-opacity opacity-80 hover:opacity-100 sm:mx-4"
+        href="https://github.com/tysonsukeforth"
+        target="_blank"
+        ><Image
+          src={githubSocial}
+          width="40"
+          height="40"
+          class="sm:size-7 lg:size-9"
+          alt="GitHub Project Repositor"
+          loading="eager"
+        /></a>
+    </li>
+    <li class="social flex">
+      <a
+        class="my-4 rounded-3xl transition-opacity opacity-80 hover:opacity-100 md:mx-4"
+        href="https://www.linkedin.com/in/tyson-sukeforth/"
+        target="_blank"
+        ><Image
+          src={linkedInSocial}
+          width="40"
+          height="40"
+          class="sm:size-7 lg:size-9"
+          alt="LinkedIn Profile"
+          loading="eager"
+        /></a>
+    </li>
+  </menu>
 </nav>
 
 <script>
-    const MobileNav = document.getElementById("MobileNav") as HTMLElement;
-    const Nav = document.querySelector("nav") as HTMLElement;
-    const links = document.querySelectorAll("menu a");
+  const MobileNav = document.getElementById("MobileNav") as HTMLElement;
+  const Nav = document.querySelector("nav") as HTMLElement;
+  const links = document.querySelectorAll("menu a");
 
-    MobileNav.addEventListener("click", () => {
-        Nav.dataset.navOpen = Nav.dataset.navOpen === "" ? "true" : "";
+  MobileNav.addEventListener("click", () => {
+    Nav.dataset.navOpen = Nav.dataset.navOpen === "" ? "true" : "";
+  });
+
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      Nav.dataset.navOpen = "";
     });
-
-    links.forEach(link => {
-        link.addEventListener("click", () => {
-            Nav.dataset.navOpen = "";
-        });
-    })
+  });
 </script>

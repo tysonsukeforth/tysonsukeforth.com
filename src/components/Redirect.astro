@@ -1,16 +1,36 @@
 ---
 import { Image } from "astro:assets";
-import face from "../assets/face.png";
+import face from "../assets/face-c.svg";
+import nutfield from "../assets/Logo.svg";
 ---
 
-<section class="flex justify-center bg-ts-blue-medium inset-shadow-[0_-60px_60px_rgba(0,0,0,0.15)] min-h-screen">
-  <div class="p-6 m-6 bg-ts-blue-dark/60">
-    <h1 class="text-4xl mb-1">We've Moved!</h1>
-    <p>
-      Come checkout at my latest work at <a
-        class="font-bold text-ts-blue-bright hover:text-white transition-all"
-        href="https://nutfielddigital.com"
-        target="_blank">Nutfield Digital</a
+<section class="flex flex-col flex-1 items-center justify-center p-4 sm:p-16 bg-ts-blue-medium inset-shadow-[0_-10vh_10vh_rgba(0,0,0,0.15)] min-h-screen">
+
+    <div class="flex flex-col gap-2 sm:gap-8 sm:flex-row justify-around items-center order-1 sm:order-0 my-8">
+      <span class="inline-block w-28 h-28 p-5 bg-ts-blue-dark rounded-full">
+        <Image
+          class="max-h-full mt-0.5"
+          src={face}
+          alt="I always feel like somebody's watching me..."
+          loading="lazy"
+        />
+      </span>
+      <span class="text-5xl font-bold ml-2 sm:ml-0 sm:mb-2 rotate-90 sm:rotate-0">&gt;</span>
+      <a class="inline-block w-64 px-5 py-4 bg-white border-3 border-ts-blue-medium hover:border-[#e23003] rounded-xl transition-colors" href="https://nutfielddigital.com">
+        <Image
+          class="max-w-full"
+          src={nutfield}
+          alt="Nutfield Digital Logo"
+          loading="lazy"
+        />
+      </a>
+    </div>
+<div class="w-lg max-w-full rounded p-8 bg-ts-blue-dark/60">
+    <h1 class="text-4xl mb-4 p-1 text-center bg-ts-blue-dark">We've Moved!</h1>
+    <p class="text-center text-base">
+      Come check out at my latest work at <a
+        class="font-bold text-ts-blue-bright hover:text-white transition-colors"
+        href="https://nutfielddigital.com">Nutfield Digital</a
       >, a digital agency I founded to help small businesses get the most out of their web presence.
     </p>
   </div>
